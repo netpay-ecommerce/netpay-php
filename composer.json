@@ -1,8 +1,8 @@
 {
-  "name": "netpay/netpay-php",
+  "name": "netpaymx/netpay-php",
   "description": "NetPay PHP Library",
   "keywords": [
-    "netpay",
+    "netpaymx",
     "payment processing",
     "api"
   ],
