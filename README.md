@@ -1,6 +1,6 @@
 # NetPay PHP bindings
 
-[![Build Status](https://travis-ci.org/netpay/netpay-php.svg?branch=master)](https://travis-ci.org/netpay/netpay-php)
+[![Build Status](https://travis-ci.org/netpay-ecommerce/netpay-php.svg?branch=master)](https://travis-ci.com/netpay-ecommerce/netpay-php)
 [![Latest Stable Version](https://poser.pugx.org/netpay/netpay-php/v/stable.svg)](https://packagist.org/packages/netpay/netpay-php)
 [![Total Downloads](https://poser.pugx.org/netpay/netpay-php/downloads.svg)](https://packagist.org/packages/netpay/netpay-php)
 [![License](https://poser.pugx.org/netpay/netpay-php/license.svg)](https://packagist.org/packages/netpay/netpay-php)

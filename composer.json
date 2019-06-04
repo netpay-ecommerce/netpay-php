@@ -11,7 +11,7 @@
   "authors": [
     {
       "name": "NetPay and contributors",
-      "homepage": "https://github.com/netpay/netpay-php/contributors"
+      "homepage": "https://github.com/netpay-ecommerce/netpay-php/contributors"
     }
   ],
   "require": {
