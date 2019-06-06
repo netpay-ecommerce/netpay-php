@@ -12,6 +12,11 @@ try {
     $login = \NetPay\Api\Login::post($data);
     $jwt = $login['result']['token'];
 
+    if ($jwt === false) {
+        print_r($login);
+        return false;
+    }
+
     $mdds[] = array(
         "id" => 0,
         "value" => 'dummy',

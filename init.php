@@ -37,6 +37,11 @@ require_once dirname(__FILE__).'/lib/NetPay/Api/Login.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/Cancelled.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/Transaction.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/Charge.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/CreateApiKey.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/CreateTokenCard.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/CustomerCards.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/DeleteTokenCard.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/RiskManager.php';
 
 require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerBank.php';
 require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerHTTP.php';
@@ -45,6 +50,11 @@ require_once dirname(__FILE__).'/lib/NetPay/Handlers/CheckoutDataHandler.php';
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/LoginDataHandler.php';
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/CancelledDataHandler.php';
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/ChargeDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/CreateApiKeyDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/CustomerCardsDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/DeleteTokenCardDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/RiskManagerDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/CreateTokenCardDataHandler.php';
 
 require_once dirname(__FILE__).'/lib/NetPay/Billing.php';
 require_once dirname(__FILE__).'/lib/NetPay/Functions.php';

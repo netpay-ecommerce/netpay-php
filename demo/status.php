@@ -12,6 +12,11 @@ try {
     $login = \NetPay\Api\Login::post($data);
     $jwt = $login['result']['token'];
 
+    if ($jwt === false) {
+        print_r($login);
+        return false;
+    }
+
     $transaction_token_id = '4fdb9edb-a340-4cdc-affa-2545eb2ac759';
 
     $status = \NetPay\Api\Transaction::get($jwt, $transaction_token_id, Config::STORE_ID_ACQ);
