@@ -12,6 +12,11 @@ try {
     $login = \NetPay\Api\Login::post($data);
     $jwt = $login['result']['token'];
 
+    if ($jwt === false) {
+        print_r($login);
+        return false;
+    }
+
     $mdds[] = array(
         "id" => 0,
         "value" => 'dummy',
@@ -64,7 +69,32 @@ try {
     $transType = 'Auth'; //Auth, PreAuth
     $cardType = '001'; //001, 002, 003 //optional
     $checkout = \NetPay\Api\Checkout::post($jwt, $fields, $mdds, $transType, $cardType );
-    print_r($checkout);
+    
+    if($checkout['result']['responseCode'] == '200' && $checkout['result']['response']['status'] == 'OK')
+    {
+        $checkout_token_id = $checkout['result']['response']['checkoutTokenId'];
+        $merchant_reference_code = $checkout['result']['response']['merchantReferenceCode'];
+        $web_authorizer_url = $checkout['result']['response']['webAuthorizerUrl'];
+
+        $web_authorizer_url = add_query_arg(
+            'checkoutTokenId',
+            $checkout_token_id,
+            $web_authorizer_url
+        );
+
+        ?></p>
+
+        <form action="<?php echo $web_authorizer_url; ?>" method="post">
+            <input type="hidden" name="jwt" id="np-payment-jwt" value="<?php echo $jwt; ?>">
+        </form>
+        <?php
+    }
+    else
+    {
+        echo "entra";
+        print_r($checkout);
+    }
+
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;
