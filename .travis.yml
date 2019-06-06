@@ -1,9 +1,11 @@
+sudo: false
+
 language: php
 
 php:
  - 5.4
  - 5.5
 
-install: composer install
+script: ./build.php ${AUTOLOAD}
 
-script: ./vendor/bin/phpunit
+after_script: ./vendor/bin/coveralls -v
