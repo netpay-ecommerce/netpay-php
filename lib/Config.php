@@ -41,6 +41,16 @@ class Config
 
     const CHARGE_URL = self::API_URL."/v1/transaction/charge";
 
+    const CREATE_API_KEY = self::API_URL."/v1/store/store-api-key";
+
+    const CREATE_TOKEN_CARD = self::API_URL."/v1/token-card";
+
+    const CUSTOMER_CARDS = self::API_URL."/v1/token-card/customer-tokens";
+
+    const RISK_MANAGER = self::API_URL."/v1/risk-manager/token-card";
+
+    const DELETE_TOKEN_CARD = self::API_URL."/v1/token-card/delete";
+
     const URL_PORT = null;
 
     const CARD_TYPES = array(

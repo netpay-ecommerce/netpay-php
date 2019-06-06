@@ -35,6 +35,7 @@ class Curl
             'Content-Type: application/json',
             'Connection: Keep-Alive',
             'Cache-Control: no-cache',
+            'Expect:',
         );
 
         if (isset($jwt)) {
@@ -76,6 +77,7 @@ class Curl
             'Content-Type: application/json',
             'Connection: Keep-Alive',
             'Cache-Control: no-cache',
+            'Expect:',
         );
 
         if (isset($jwt)) {

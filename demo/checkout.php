@@ -12,6 +12,11 @@ try {
     $login = \NetPay\Api\Login::post($data);
     $jwt = $login['result']['token'];
 
+    if ($jwt === false) {
+        print_r($login);
+        return false;
+    }
+
     $mdds[] = array(
         "id" => 0,
         "value" => 'dummy',
@@ -63,8 +68,8 @@ try {
     );
     $transType = 'Auth'; //Auth, PreAuth
     $cardType = '001'; //001, 002, 003 //optional
-    $checkout = \NetPay\Api\Checkout::post($jwt, $fields, $mdds, $transType, $cardType );
-    print_r($checkout);
+    $result = \NetPay\Api\Checkout::post($jwt, $fields, $mdds, $transType, $cardType );
+    print_r($result);
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;

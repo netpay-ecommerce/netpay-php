@@ -73,19 +73,11 @@ try {
     if($checkout['result']['responseCode'] == '200' && $checkout['result']['response']['status'] == 'OK')
     {
         $checkout_token_id = $checkout['result']['response']['checkoutTokenId'];
-        $merchant_reference_code = $checkout['result']['response']['merchantReferenceCode'];
         $web_authorizer_url = $checkout['result']['response']['webAuthorizerUrl'];
-
-        $web_authorizer_url = add_query_arg(
-            'checkoutTokenId',
-            $checkout_token_id,
-            $web_authorizer_url
-        );
-
-        ?></p>
-
-        <form action="<?php echo $web_authorizer_url; ?>" method="post">
+        ?>
+        <form action="<?php echo $web_authorizer_url . '?checkoutTokenId=' . $checkout_token_id; ?>" method="post">
             <input type="hidden" name="jwt" id="np-payment-jwt" value="<?php echo $jwt; ?>">
+            <input type="submit" value="Pagar con NetPay">
         </form>
         <?php
     }
