@@ -61,7 +61,7 @@ try {
         "promotion" => '000000',
         "order_id" => '12345',
         "deviceFingerprintID" => 'fea7f7888a184a10ae2820969ef3062a',
-        "cardToken" => 'Y09R/DbnileiECJ6wqdVjv6QUEr+MqOS2eYykAvteFrtDntjxl0d1OHqGF/QpblA0bZ1vO9US/GYwsqQUhWB/pdeBa7g4itWOAf61b/4E5E=',
+        "cardToken" => 'VW2FdHVU6BXGoiR99teVRNLK8lBK/6vMkVoY4LNi2O2cey0It99AuG/SlBakT6gC6HfamF/4O0MU9gGrhnIuIfki/u7q0ljC+VHyTkNA41w=',
         "bill" => \NetPay\Billing::format($billing),
         "ship" => \NetPay\Shipping::format($shipping),
         "itemList" => \NetPay\ItemList::format($itemList),

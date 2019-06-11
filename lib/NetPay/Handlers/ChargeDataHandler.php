@@ -24,15 +24,25 @@ class ChargeDataHandler
     /**
      * Prepares the given data for being send.
      */
-    public static function prepare($transactionTokenId, $grandTotalAmount)
+    public static function prepare($transactionTokenId, $grandTotalAmount, $transactionType)
     {
-        return [
-            "transactionTokenId" => $transactionTokenId,
-            "transactionType" => 'PostAuth',
-            "purchaseTotals" => [
-                "grandTotalAmount" => $grandTotalAmount,
-                "currency" => 'MXN',
-            ]
-        ];
+        if(!empty($grandTotalAmount))
+        {
+            return [
+                "transactionTokenId" => $transactionTokenId,
+                "transactionType" => $transactionType,
+                "purchaseTotals" => [
+                    "grandTotalAmount" => $grandTotalAmount,
+                    "currency" => 'MXN',
+                ]
+            ];
+        }
+        else
+        {
+            return [
+                "transactionTokenId" => $transactionTokenId,
+                "transactionType" => $transactionType
+            ];
+        }
     }
 }
