@@ -30,9 +30,9 @@ class Charge
     /**
      * Send a post request to make the checkout.
      */
-    public static function post($jwt, $transactionTokenId, $grandTotalAmount)
+    public static function post($jwt, $transactionTokenId, $grandTotalAmount, $transactionType)
     {
-        $fields = ChargeDataHandler::prepare($transactionTokenId, $grandTotalAmount);
+        $fields = ChargeDataHandler::prepare($transactionTokenId, $grandTotalAmount, $transactionType);
 
         $fields_string = json_encode($fields);
 
