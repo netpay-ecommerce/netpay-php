@@ -19,30 +19,15 @@
 
 namespace NetPay\Handlers;
 
-class ChargeDataHandler
+class WebhookDataHandler
 {
     /**
      * Prepares the given data for being send.
      */
-    public static function prepare($transactionTokenId, $grandTotalAmount, $transactionType)
+    public static function prepare(array $input)
     {
-        if($grandTotalAmount > 0 && $transactionType == 'PostAuth')
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType,
-                "purchaseTotals" => [
-                    "grandTotalAmount" => (double)$grandTotalAmount,
-                    "currency" => 'MXN',
-                ]
-            ];
-        }
-        else
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType
-            ];
-        }
+        return [
+            "webhook" => $input['webhook'],
+        ];
     }
 }

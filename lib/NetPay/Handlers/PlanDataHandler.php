@@ -19,30 +19,33 @@
 
 namespace NetPay\Handlers;
 
-class ChargeDataHandler
+class PlanDataHandler
 {
     /**
      * Prepares the given data for being send.
      */
-    public static function prepare($transactionTokenId, $grandTotalAmount, $transactionType)
+    public static function prepare(array $input)
     {
-        if($grandTotalAmount > 0 && $transactionType == 'PostAuth')
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType,
-                "purchaseTotals" => [
-                    "grandTotalAmount" => (double)$grandTotalAmount,
-                    "currency" => 'MXN',
-                ]
-            ];
-        }
-        else
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType
-            ];
-        }
+        return [
+            "name" => $input['name'],
+            "amount" => $input['amount'],
+            "currency" => $input['currency'],
+            "interval" => $input['interval'],
+            "frecuency" => $input['frecuency'],
+            "trialDays" => $input['trialDays'],
+            "expiryCount" => $input['expiryCount'],
+        ];
     }
+
+    /**
+     * Prepares the given data for being send.
+     */
+    public static function update(array $input)
+    {
+        return [
+            "name" => $input['name'],
+            "amount" => $input['amount'],
+        ];
+    }
+    
 }

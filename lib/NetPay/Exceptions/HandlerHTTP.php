@@ -55,4 +55,8 @@ class HandlerHTTP extends Exception
     {
         throw self::build($result, $http_code);
     }
+
+    public static function getError($response) {
+        return new Exception($response['message'], 1);
+    }
 }

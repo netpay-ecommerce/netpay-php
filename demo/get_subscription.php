@@ -17,12 +17,9 @@ try {
         return false;
     }
 
-    $transaction_token_id = '5e2a57e1-5321-4b98-9e37-fe78951fa610';
-    $grandTotalAmount = 7500; //optional
-    $transactionType = 'Auth'; //Auth, PreAuth, PostAuth
-
-    $status = \NetPay\Api\Charge::post($jwt, $transaction_token_id, $grandTotalAmount, $transactionType);
-    print_r($status);
+    $subscription_id = 'mEAEPXvfxO_KL!yi!Pwy3=2zlMNZHU';
+    $response = \NetPay\Api\Subscription::get_subscription($jwt, $subscription_id);
+    print_r($response);
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;

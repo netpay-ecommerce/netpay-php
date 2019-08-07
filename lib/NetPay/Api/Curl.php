@@ -105,4 +105,89 @@ class Curl
 
         return compact('code', 'result');
     }
+
+    /**
+     * Execute a put request with the necessary configuration using curl.
+     */
+    public static function put($url, $fields_string, $jwt = null)
+    {
+        //open connection
+        $ch = curl_init();
+
+        $http_header = array(
+            'Content-Type: application/json',
+            'Connection: Keep-Alive',
+            'Cache-Control: no-cache',
+            'Expect:',
+        );
+
+        if (isset($jwt)) {
+            $http_header[] = 'Authorization: Bearer '.$jwt;
+        }
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $http_header);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+
+        if (!is_null(Config::URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        }
+
+        //execute post
+        $result = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        //close connection
+        curl_close($ch);
+
+        return compact('code', 'result');
+    }
+
+    /**
+     * Execute a delete request with the necessary configuration using curl.
+     */
+    public static function delete($url, $fields_string, $jwt = null)
+    {
+        //open connection
+        $ch = curl_init();
+
+        $http_header = array(
+            'Content-Type: application/json',
+            'Connection: Keep-Alive',
+            'Cache-Control: no-cache',
+            'Expect:',
+        );
+
+        if (isset($jwt)) {
+            $http_header[] = 'Authorization: Bearer '.$jwt;
+        }
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $http_header);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+
+        if (!is_null(Config::URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        }
+
+        //execute post
+        $result = curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        
+        //close connection
+        curl_close($ch);
+
+        return compact('code', 'result');
+    }
+
 }

@@ -42,6 +42,10 @@ require_once dirname(__FILE__).'/lib/NetPay/Api/CreateTokenCard.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/CustomerCards.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/DeleteTokenCard.php';
 require_once dirname(__FILE__).'/lib/NetPay/Api/RiskManager.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/Plan.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/Client.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/Subscription.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/Webhook.php';
 
 require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerBank.php';
 require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerHTTP.php';
@@ -55,6 +59,10 @@ require_once dirname(__FILE__).'/lib/NetPay/Handlers/CustomerCardsDataHandler.ph
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/DeleteTokenCardDataHandler.php';
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/RiskManagerDataHandler.php';
 require_once dirname(__FILE__).'/lib/NetPay/Handlers/CreateTokenCardDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/PlanDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/ClientDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/SubscriptionDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/WebhookDataHandler.php';
 
 require_once dirname(__FILE__).'/lib/NetPay/Billing.php';
 require_once dirname(__FILE__).'/lib/NetPay/Functions.php';

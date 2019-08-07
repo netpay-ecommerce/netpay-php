@@ -17,12 +17,13 @@ try {
         return false;
     }
 
-    $transaction_token_id = '5e2a57e1-5321-4b98-9e37-fe78951fa610';
-    $grandTotalAmount = 7500; //optional
-    $transactionType = 'Auth'; //Auth, PreAuth, PostAuth
+    $webhook_id = 1;
+    $data = array(
+        'webhook' => 'http://localhost:8080/wordpress-4.9.10/index.php?charitable-listener=netpay&recurring=true',
+    );
 
-    $status = \NetPay\Api\Charge::post($jwt, $transaction_token_id, $grandTotalAmount, $transactionType);
-    print_r($status);
+    $response = \NetPay\Api\Webhook::put($jwt, $data, $webhook_id);
+    print_r($response);
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;
