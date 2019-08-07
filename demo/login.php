@@ -10,13 +10,13 @@ try {
     );
 
     $login = \NetPay\Api\Login::post($data);
-
+    $jwt = $login['result']['token'];
     if ($jwt === false) {
         print_r($login);
         return false;
     }
     
-    echo $login['result']['token'];
+    echo $jwt;
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;

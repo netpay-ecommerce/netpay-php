@@ -19,30 +19,20 @@
 
 namespace NetPay\Handlers;
 
-class ChargeDataHandler
+class SubscriptionDataHandler
 {
     /**
      * Prepares the given data for being send.
      */
-    public static function prepare($transactionTokenId, $grandTotalAmount, $transactionType)
+    public static function prepare(array $input)
     {
-        if($grandTotalAmount > 0 && $transactionType == 'PostAuth')
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType,
-                "purchaseTotals" => [
-                    "grandTotalAmount" => (double)$grandTotalAmount,
-                    "currency" => 'MXN',
-                ]
-            ];
-        }
-        else
-        {
-            return [
-                "transactionTokenId" => $transactionTokenId,
-                "transactionType" => $transactionType
-            ];
-        }
+        return [
+            "billingStart" => $input['billingStart'],
+            "deviceFingerprintID" => $input['deviceFingerprintID'],
+            "merchantReferenceCode" => $input['merchantReferenceCode'],
+            "plan" => array('id' => $input['plan']),
+            "storeToken" => array('publicCardToken' => $input['storeToken']),
+            "client" => array('id' => $input['client']),
+        ];
     }
 }

@@ -19,7 +19,7 @@ try {
 
     $data = array(
         'username' => 'ecommerce@netpay.com.mx',
-        'storeApiKey' => 'oe1206Pv!VvBEG73F3HVllLd7K_9F2!K',
+        'storeApiKey' => 'afmPOLMF0U4Fl=hqYVdOK=Cx0e0LMfEB',
         'customerCard' => array(
             'cardNumber' => '4000000000000002',
             'expirationMonth' => '01',
