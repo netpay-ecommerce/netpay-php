@@ -36,7 +36,7 @@ class Client
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::ADD_CLIENT, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$ADD_CLIENT, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 201) {
@@ -55,7 +55,7 @@ class Client
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::put(Config::UPDATE_CLIENT, $fields_string, $jwt);
+        $curl_result = Curl::put(Config::$UPDATE_CLIENT, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
@@ -70,7 +70,7 @@ class Client
      */
     public static function get($jwt)
     {
-        $curl_result = Curl::get(Config::GET_CLIENTS, $jwt);
+        $curl_result = Curl::get(Config::$GET_CLIENTS, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
@@ -85,7 +85,7 @@ class Client
      */
     public static function get_client($jwt, $client_id)
     {
-        $curl_result = Curl::get(sprintf(Config::GET_CLIENT, $client_id), $jwt);
+        $curl_result = Curl::get(sprintf(Config::$GET_CLIENT, $client_id), $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {

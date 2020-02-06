@@ -48,6 +48,6 @@ class Transaction
      */
     private function format_url($transaction_token_id, $store_customer)
     {
-        return sprintf(Config::TRANSACTION_URL, $transaction_token_id, $store_customer);
+        return sprintf(Config::$TRANSACTION_URL, $transaction_token_id, $store_customer);
     }
 }

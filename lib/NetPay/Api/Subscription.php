@@ -36,7 +36,7 @@ class Subscription
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::ADD_SUBSCRIPTION, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$ADD_SUBSCRIPTION, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 201) {
@@ -51,7 +51,7 @@ class Subscription
      */
     public static function get($jwt)
     {
-        $curl_result = Curl::get(Config::GET_SUBSCRIPTIONS, $jwt);
+        $curl_result = Curl::get(Config::$GET_SUBSCRIPTIONS, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
@@ -66,7 +66,7 @@ class Subscription
      */
     public static function get_subscription($jwt, $subscription_id)
     {
-        $curl_result = Curl::get(sprintf(Config::GET_SUBSCRIPTION, $subscription_id), $jwt);
+        $curl_result = Curl::get(sprintf(Config::$GET_SUBSCRIPTION, $subscription_id), $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
@@ -82,7 +82,7 @@ class Subscription
      */
     public static function stop($jwt, $subscription_id)
     {
-        $curl_result = Curl::put(sprintf(Config::STOP_SUBSCRIPTION, $subscription_id), array(), $jwt);
+        $curl_result = Curl::put(sprintf(Config::$STOP_SUBSCRIPTION, $subscription_id), array(), $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {

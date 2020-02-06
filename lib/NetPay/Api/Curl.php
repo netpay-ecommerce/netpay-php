@@ -48,11 +48,11 @@ class Curl
         curl_setopt($ch, CURLOPT_POST, strlen($fields_string));
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
-        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::$CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::$CURLOPT_TIMEOUT);
 
-        if (!is_null(Config::URL_PORT)) {
-            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        if (!is_null(Config::$URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::$URL_PORT);
         }
 
         //execute post
@@ -88,11 +88,11 @@ class Curl
         curl_setopt($ch, CURLOPT_HTTPHEADER, $http_header);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_ENCODING , "gzip, deflate");
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
-        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::$CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::$CURLOPT_TIMEOUT);
 
-        if (!is_null(Config::URL_PORT)) {
-            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        if (!is_null(Config::$URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::$URL_PORT);
         }
 
         //execute post
@@ -131,11 +131,11 @@ class Curl
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
-        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::$CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::$CURLOPT_TIMEOUT);
 
-        if (!is_null(Config::URL_PORT)) {
-            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        if (!is_null(Config::$URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::$URL_PORT);
         }
 
         //execute post
@@ -173,11 +173,11 @@ class Curl
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
-        curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::$CURLOPT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, Config::$CURLOPT_TIMEOUT);
 
-        if (!is_null(Config::URL_PORT)) {
-            curl_setopt($ch, CURLOPT_PORT, Config::URL_PORT);
+        if (!is_null(Config::$URL_PORT)) {
+            curl_setopt($ch, CURLOPT_PORT, Config::$URL_PORT);
         }
 
         //execute post

@@ -36,7 +36,7 @@ class Plan
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::CREATE_PLAN, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$CREATE_PLAN, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 201) {
@@ -55,7 +55,7 @@ class Plan
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::put(sprintf(Config::UPDATE_PLAN, $plan_id), $fields_string, $jwt);
+        $curl_result = Curl::put(sprintf(Config::$UPDATE_PLAN, $plan_id), $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
@@ -70,7 +70,7 @@ class Plan
      */
     public static function get($jwt)
     {
-        $curl_result = Curl::get(Config::GET_PLANS, $jwt);
+        $curl_result = Curl::get(Config::$GET_PLANS, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {
