@@ -2,11 +2,12 @@
 require_once ('../init.php');
 
 use \NetPay\Config;
+Config::init();
 
 try {
     $data = array(
-        'userName' => Config::USER_NAME,
-        'password' => Config::PASS,
+        'userName' => Config::$USER_NAME,
+        'password' => Config::$PASS,
     );
 
     $login = \NetPay\Api\Login::post($data);
@@ -19,7 +20,7 @@ try {
 
     $transaction_token_id = '4fdb9edb-a340-4cdc-affa-2545eb2ac759';
 
-    $status = \NetPay\Api\Transaction::get($jwt, $transaction_token_id, Config::STORE_ID_ACQ);
+    $status = \NetPay\Api\Transaction::get($jwt, $transaction_token_id, Config::$STORE_ID_ACQ);
     print_r($status);
 } catch (Exception $e) {
     $description = $e->getMessage();

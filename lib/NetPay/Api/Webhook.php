@@ -36,7 +36,7 @@ class Webhook
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::ADD_WEBHOOK, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$ADD_WEBHOOK, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
         if ($curl_result['code'] != 201) {
             throw HandlerHTTP::getError($result);
@@ -54,7 +54,7 @@ class Webhook
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::put(sprintf(Config::UPDATE_WEBHOOK, $webhook_id), $fields_string, $jwt);
+        $curl_result = Curl::put(sprintf(Config::$UPDATE_WEBHOOK, $webhook_id), $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
         if ($curl_result['code'] != 201) {
             throw HandlerHTTP::getError($result);

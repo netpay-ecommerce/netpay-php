@@ -33,7 +33,7 @@ class CreateApiKey
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::CREATE_API_KEY, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$CREATE_API_KEY, $fields_string, $jwt);
         $result = json_decode($curl_result['result'], true);
 
         if ($curl_result['code'] != 200) {

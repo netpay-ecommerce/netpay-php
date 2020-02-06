@@ -36,7 +36,7 @@ class Checkout
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::CHECKOUT_URL, $fields_string, $jwt);
+        $curl_result = Curl::post(Config::$CHECKOUT_URL, $fields_string, $jwt);
 
         $result = json_decode($curl_result['result'], true);
 

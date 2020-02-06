@@ -36,7 +36,7 @@ class Login
 
         $fields_string = json_encode($fields);
 
-        $curl_result = Curl::post(Config::AUTH_LOGIN_URL, $fields_string);
+        $curl_result = Curl::post(Config::$AUTH_LOGIN_URL, $fields_string);
 
         $result = json_decode($curl_result['result'], true);
 

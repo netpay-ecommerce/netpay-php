@@ -45,8 +45,8 @@ use \NetPay\Config;
 
 try {
     $data = array(
-        'userName' => Config::USER_NAME,
-        'password' => Config::PASS,
+        'userName' => Config::$USER_NAME,
+        'password' => Config::$PASS,
     );
 
     $login = \NetPay\Api\Login::post($data);
@@ -87,6 +87,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, strlen($fields_string));
 curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
 curl_setopt($ch, CURLOPT_ENCODING, "gzip, deflate");
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::CURLOPT_TIMEOUT);
-curl_setopt($ch, CURLOPT_TIMEOUT, Config::CURLOPT_TIMEOUT);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, Config::$CURLOPT_TIMEOUT);
+curl_setopt($ch, CURLOPT_TIMEOUT, Config::$CURLOPT_TIMEOUT);
 ```
