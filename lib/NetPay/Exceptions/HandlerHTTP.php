@@ -37,7 +37,7 @@ class HandlerHTTP extends Exception
     /**
      * Build the error message of Curl request.
      */
-    private function build($result = null, $http_code)
+    private static function build($result = null, $http_code)
     {
         if (isset($http_code) != true || $http_code == 0) {
             $http_code = 0;
