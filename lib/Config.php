@@ -60,14 +60,14 @@ class Config
 
     public static function init() {
         self::$API_URL = "https://ecommerce.netpay.com.mx/gateway-ecommerce";
-        self::$USER_NAME = 'ecommerce@netpay.com.mx';
-        self::$PASS = 'ec0m12';
-        self::$STORE_ID_ACQ = '483131';
+        self::$USER_NAME = 'xozknfsczjjxckzjvc@ttirv.net';
+        self::$PASS = 'RbGv8HrJGxdhwn4EFqgSq6FZ9d.';
+        self::$STORE_ID_ACQ = '610131';
 
         //-- General settings
         self::$CURLOPT_TIMEOUT = 40; //Timeout in seconds
     
-        self::$AUTH_LOGIN_URL = self::$API_URL . "/v1/auth/login";
+        self::$AUTH_LOGIN_URL = self::$API_URL . "/v1.1/auth/login";
         self::$CHECKOUT_URL = self::$API_URL."/v2/checkout";
         self::$TRANSACTION_URL = self::$API_URL."/v1/transaction-report/transaction/%s/%s";
         self::$CANCELLED_URL = self::$API_URL."/v1/transaction/refund";

@@ -8,6 +8,7 @@ try {
     $data = array(
         'userName' => Config::$USER_NAME,
         'password' => Config::$PASS,
+        'storeIdAdq' => Config::$STORE_ID_ACQ
     );
 
     $login = \NetPay\Api\Login::post($data);
@@ -45,7 +46,7 @@ try {
         'billing_country' => 'MX',
         'billing_first_name' => 'Jhon',
         'billing_last_name' => 'Doe',
-        'billing_email' => 'reject@netpay.com.mx',
+        'billing_email' => 'accept@netpay.com.mx',
         'billing_phone' => '8461234567',
         'billing_postcode' => '93994',
         'billing_state' => 'Veracruz',

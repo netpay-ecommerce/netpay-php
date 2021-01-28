@@ -30,7 +30,9 @@ class LoginDataHandler
             "security" => [
                 'userName' => $input['userName'],
                 'password' => $input['password'],
-            ]
+            ],
+            "type"=> "string",
+            "storeIdAdq"=> $input['storeIdAdq']
         ];
     }
 }

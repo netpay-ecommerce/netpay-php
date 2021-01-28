@@ -8,6 +8,7 @@ try {
     $data = array(
         'userName' => Config::$USER_NAME,
         'password' => Config::$PASS,
+        'storeIdAdq' => Config::$STORE_ID_ACQ
     );
 
     $login = \NetPay\Api\Login::post($data);
