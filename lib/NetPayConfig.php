@@ -46,7 +46,7 @@ class NetPayConfig
 
     public static function init($testMode) {
         self::$API_URL_LIVE = "https://suite.netpay.com.mx/gateway-ecommerce";
-        self::$API_URL_SANDBOX = "https://gateway-192.netpaydev.com/gateway-ecommerce";
+        self::$API_URL_SANDBOX = "https://gateway-154.netpaydev.com/gateway-ecommerce";
 
         //-- General settings
         self::$CURLOPT_TIMEOUT = 40; //Timeout in seconds
