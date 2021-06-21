@@ -14,7 +14,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright 2018 NetPay. All rights reserved.
+ * Copyright 2020 NetPay. All rights reserved.
  */
 
 if (!function_exists('curl_init')) {
@@ -29,52 +29,30 @@ if (!function_exists('get_called_class')) {
     throw new Exception('NetPay needs to be run on PHP >= 5.3.0.');
 }
 
-require_once dirname(__FILE__).'/lib/Config.php';
+require_once dirname(__FILE__).'/lib/NetPayConfig.php';
 
-require_once dirname(__FILE__).'/lib/NetPay/Api/Checkout.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Curl.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Login.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Cancelled.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Transaction.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Charge.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/CreateApiKey.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/CreateTokenCard.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/CustomerCards.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/DeleteTokenCard.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/RiskManager.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Plan.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Client.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Subscription.php';
-require_once dirname(__FILE__).'/lib/NetPay/Api/Webhook.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayToken.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayCheckout.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayHostedCheckout.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayCash.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayWebhook.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayCashEnable.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayCurl.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayTransaction.php';
+require_once dirname(__FILE__).'/lib/NetPay/Api/NetPayConfirm.php';
 
-require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerBank.php';
-require_once dirname(__FILE__).'/lib/NetPay/Exceptions/HandlerHTTP.php';
+require_once dirname(__FILE__).'/lib/NetPay/Exceptions/NetPayHandlerBank.php';
+require_once dirname(__FILE__).'/lib/NetPay/Exceptions/NetPayHandlerHTTP.php';
 
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/CheckoutDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/LoginDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/CancelledDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/ChargeDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/CreateApiKeyDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/CustomerCardsDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/DeleteTokenCardDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/RiskManagerDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/CreateTokenCardDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/PlanDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/ClientDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/SubscriptionDataHandler.php';
-require_once dirname(__FILE__).'/lib/NetPay/Handlers/WebhookDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/NetPayCheckoutDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/NetPayHostedCheckoutDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/NetPayCashDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/NetPayWebhookDataHandler.php';
+require_once dirname(__FILE__).'/lib/NetPay/Handlers/NetPayTokenDataHandler.php';
 
-require_once dirname(__FILE__).'/lib/NetPay/Billing.php';
-require_once dirname(__FILE__).'/lib/NetPay/Functions.php';
-require_once dirname(__FILE__).'/lib/NetPay/ItemList.php';
-require_once dirname(__FILE__).'/lib/NetPay/Order.php';
-require_once dirname(__FILE__).'/lib/NetPay/Shipping.php';
-
-require_once dirname(__FILE__).'/lib/NetPay/MID/Agencias.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Donaciones.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Escuelas.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Generales.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Profesionales.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Retail.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Tickets.php';
-require_once dirname(__FILE__).'/lib/NetPay/MID/Restaurant.php';
+require_once dirname(__FILE__).'/lib/NetPay/NetPayBill.php';
+require_once dirname(__FILE__).'/lib/NetPay/NetPayFunctions.php';
+require_once dirname(__FILE__).'/lib/NetPay/NetPayOrder.php';
+require_once dirname(__FILE__).'/lib/NetPay/NetPayShip.php';
+require_once dirname(__FILE__).'/lib/NetPay/NetPayInstallments.php';
+require_once dirname(__FILE__).'/lib/NetPay/LineItems.php';
