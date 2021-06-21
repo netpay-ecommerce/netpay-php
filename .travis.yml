@@ -21,7 +21,7 @@ env:
 cache:
   directories:
     - $HOME/.composer/cache/files
-    - netpay-mock
+    - stripe-mock
 
 script: ./build.php ${AUTOLOAD}
 

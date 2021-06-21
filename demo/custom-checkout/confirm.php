@@ -9,10 +9,10 @@ define('PRIVATE_KEY', 'sk_netpay_kdxBjHVQqyXvTNCUPwZYEvDMjtoRspcZCPmexBVaLfJlf')
 NetPayConfig::init(TEST_MODE);
 
 try {
-    $transaction_token_id = '11b171b3-5fea-4949-90f6-36d0fff7bce8';
+    $transaction_token_id = '8f0da36c-91a2-48c6-9109-c31eab630f62';
 
-    $status = \NetPay\Api\NetPayTransaction::get(PRIVATE_KEY, $transaction_token_id);
-    print_r($status);
+    $confirm = \NetPay\Api\NetPayConfirm::post(PRIVATE_KEY, $transaction_token_id);
+    print_r($confirm);
 } catch (Exception $e) {
     $description = $e->getMessage();
     echo $description;
